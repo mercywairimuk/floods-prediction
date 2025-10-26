@@ -1,0 +1,115 @@
+/* Background image for the site */
+body {
+    background-image: url("../images/background.png");/* Replace with your own image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #2c4126;
+    color: #00fd03;
+
+}
+
+/* Navbar Styling */
+/* =================== Navbar Styling =================== */
+.navbar {
+    background-color: #1f3c2c !important; /* Custom deep green */
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    color: #00fd03 !important;
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    border-color: #00fd03;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%2300fd03' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 253, 3, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-nav .nav-link {
+    color: #aafcb2 !important;
+    font-size: 1.05rem;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00fd03 !important;
+    text-decoration: underline;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #ffffff !important;
+    border-bottom: 2px solid #00fd03;
+}
+
+/* Dropdown menu style (if you use any) */
+.navbar-nav .dropdown-menu {
+    background-color: #1f3c2c;
+    border: none;
+}
+
+.navbar-nav .dropdown-item {
+    color: #aafcb2;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #2b5a40;
+    color: #00fd03;
+}
+
+
+
+/* Footer Styling */
+.footer {
+    margin-top: auto;
+    background-color: #1f3c2c;
+    color: #aafcb2;
+    font-size: 0.9rem;
+    border-top: 1px solid #00fd03;
+}
+
+
+/* Table styling */
+.table th, .table td {
+    text-align: center;
+    color: #fdfdfd;
+}
+
+/* Dynamic Table Styling based on risk level */
+.risk-low {
+    background-color: #28a745; /* Green for low risk */
+    color: white;
+}
+
+.risk-moderate {
+    background-color: #ffc107; /* Yellow for moderate risk */
+    color: black;
+}
+
+.risk-high {
+    background-color: #fa828d; /* Red for high risk */
+    color: white;
+}
+
+/* Button styles for result explanation and download */
+.btn-custom {
+    background-color: #b700ff;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #2c09a8;
+}
+
+/* Add some space around content */
+.content {
+    padding: 40px 0;
+}

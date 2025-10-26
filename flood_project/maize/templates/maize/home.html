@@ -1,0 +1,31 @@
+{% extends 'maize/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Flood Risk Prediction</h2>
+    <p class="text-center">Please enter your farm details below to estimate flood risk and yield loss.</p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" action="{% url 'home' %}">
+
+                {% csrf_token %}
+
+                {% for field in form %}
+                  <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                      <div class="text-danger">{{ field.errors }}</div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+
+
+                <button type="submit" class="btn btn-primary btn-lg btn-block mt-3">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'maize/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Prediction Results</h2>
+    <p class="text-center">Here are the latest predictions based on the farm data provided:</p>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Farmer</th>
+                <th>Risk Level</th>
+                <th>Yield Loss Estimate (%)</th>
+                <th>Recommendation</th>
+                <th>Prediction Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for risk in risks %}
+            <tr class="risk-{{ risk.risk_level|lower }}">
+                <td>{{ risk.farmer.name }}</td>
+                <td>{{ risk.risk_level }}</td>
+                <td>{{ risk.yield_loss_estimate }}</td>
+                <td>{{ risk.recommendation }}</td>
+                <td>{{ risk.date_predicted }}</td>
+                <td>
+
+                    <a href="{% url 'explanation' risk.risk_id %}" class="btn btn-custom">Explanation</a>
+                    <a href="#" class="btn btn-custom">Download</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

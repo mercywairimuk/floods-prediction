@@ -1,0 +1,29 @@
+
+
+{% extends 'maize/base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h4>Prediction Summary for {{ risk.farmer.name }}</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Location:</strong> {{ risk.farmer.location }}</p>
+            <p><strong>Risk Level:</strong> {{ risk.risk_level }}</p>
+            <p><strong>Yield Loss Estimate:</strong> {{ risk.yield_loss_estimate }}%</p>
+            <p><strong>Recommendation:</strong> {{ risk.recommendation }}</p>
+
+            {% if risk.risk_level != 'Low' %}
+                <hr>
+                <div class="alert alert-info">
+                    {{ recommendation_details|safe }}
+                </div>
+            {% endif %}
+        </div>
+            <div class="d-flex gap-3">
+        <a href="?download=1" class="btn btn-success">Download Report</a>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+    </div>
+    </div>
+</div>
+{% endblock %}
